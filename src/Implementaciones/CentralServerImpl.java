@@ -49,8 +49,9 @@ public class CentralServerImpl extends UnicastRemoteObject implements CentralSer
 
 
             int puerto = 1099;
+            String ip = "192.168.1.82";
             //CentralServer centralServer = new CentralServerImpl("127.0.0.1", 5000, path,nombreArchivo);
-            CentralServer centralServer = new CentralServerImpl( new Servidor("127.0.0.1", puerto, path,nombreArchivo), servidores);
+            CentralServer centralServer = new CentralServerImpl( new Servidor(ip, puerto, path,nombreArchivo), servidores);
             // Registrar el servidor central en el registro RMI
 
             java.rmi.registry.Registry registry = java.rmi.registry.LocateRegistry.createRegistry(puerto);

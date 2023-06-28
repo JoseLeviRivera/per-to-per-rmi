@@ -10,8 +10,11 @@ import java.util.List;
 public class Client {
     public static void main(String[] args) {
         try {
+
+            int puerto = 1099;
+            String ip = "192.168.1.82";
             // Conectar al servidor central
-            Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1099);
+            Registry registry = LocateRegistry.getRegistry(ip, puerto);
             CentralServer centralServer = (CentralServer) registry.lookup("CentralServer");
 
             // Obtener la información del archivo del servidor central
